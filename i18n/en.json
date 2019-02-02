@@ -1,0 +1,6 @@
+{
+    "Imgur_Command_Description": "Search for a matching image (Powered by Imgur.com)",
+    "Imgur_Search_Term": "cats",
+    "Customize_Imgur_ClientId": "Imgur Client ID",
+    "Customize_Imgur_ClientId_Description": "Please get your own Imgur Client ID at https://api.imgur.com/oauth2/addclient"
+}
