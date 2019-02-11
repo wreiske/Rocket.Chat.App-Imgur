@@ -3,12 +3,13 @@ import { ImgurResult } from './ImgurResult';
 import { ImgurImageResult } from './ImgurImageResult';
 
 export class ImageGetter {
+    private readonly defaultKey = '9f75b03f6156b08';
     public async search(logger: ILogger, http: IHttp, phase: string, read: IRead): Promise<Array<ImgurResult>> {
         let search = phase.trim();
         if (!search) {
             search = 'random';
         }
-        const key = await read.getEnvironmentReader().getSettings().getValueById('imgur_client_id');
+        const key = await read.getEnvironmentReader().getSettings().getValueById('imgur_client_id') || this.defaultKey;
 
         // There is no way to limit the number of responses currently from the Imgur API
         // See https://apidocs.imgur.com/#paging-results
@@ -55,7 +56,7 @@ export class ImageGetter {
     }
 
     public async getOne(logger: ILogger, http: IHttp, imageId: string, read: IRead): Promise<ImgurImageResult> {
-        const key = await read.getEnvironmentReader().getSettings().getValueById('imgur_client_id');
+        const key = await read.getEnvironmentReader().getSettings().getValueById('imgur_client_id')  || this.defaultKey;
         const response = await http.get(`https://api.imgur.com/3/image/${imageId}`, {
             headers: {
                 'Authorization': `Client-ID ${key}`

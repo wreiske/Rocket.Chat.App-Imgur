@@ -1,0 +1,8 @@
+{
+  "Imgur_Command_Description": "Sök efter en matchande bild (Drivs av Imgur.com)",
+  "Imgur_Search_Term": "katter",
+  "Customize_Imgur_ClientId": "Imgur-Klient-ID",
+  "Customize_Imgur_ClientId_Description": "Vänligen skaffa ditt eget Imgur-klient-ID på https://api.imgur.com/oauth2/addclient",
+  "Customize_Imgur_Show_Title": "Visa bildtitlar",
+  "Customize_Imgur_Show_Title_Description": "Visar titel på bilden (om en titel finns)"
+}

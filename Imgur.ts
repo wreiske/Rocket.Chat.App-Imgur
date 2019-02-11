@@ -27,11 +27,20 @@ export class ImgurApp extends App {
         await configuration.settings.provideSetting({
             id: 'imgur_client_id',
             type: SettingType.STRING,
-            packageValue: '9f75b03f6156b08',
+            packageValue: '',
             required: true,
             public: false,
             i18nLabel: 'Customize_Imgur_ClientId',
             i18nDescription: 'Customize_Imgur_ClientId_Description',
+        });
+        await configuration.settings.provideSetting({
+            id: 'imgur_show_title',
+            type: SettingType.BOOLEAN,
+            packageValue: true,
+            required: true,
+            public: false,
+            i18nLabel: 'Customize_Imgur_Show_Title',
+            i18nDescription: 'Customize_Imgur_Show_Title_Description',
         });
         await configuration.slashCommands.provideSlashCommand(new ImgurCommand(this));
     }

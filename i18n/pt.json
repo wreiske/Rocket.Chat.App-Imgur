@@ -1,0 +1,8 @@
+{
+  "Imgur_Command_Description": "Procurar por uma imagem correspondente (Alimentado por Imgur.com)",
+  "Imgur_Search_Term": "gatos",
+  "Customize_Imgur_ClientId": "ID do cliente Imgur",
+  "Customize_Imgur_ClientId_Description": "Por favor, obtenha o seu próprio ID do Cliente Imgur em https://api.imgur.com/oauth2/addclient",
+  "Customize_Imgur_Show_Title": "Mostrar títulos de imagens",
+  "Customize_Imgur_Show_Title_Description": "Mostra o título da imagem (se existir um título)"
+}

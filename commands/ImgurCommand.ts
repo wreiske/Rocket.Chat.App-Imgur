@@ -47,11 +47,19 @@ export class ImgurCommand implements ISlashCommand {
 
         try {
             const image = await this.app.getImageGetter().getOne(this.app.getLogger(), http, item.id, read);
+            const showTitle = await read.getEnvironmentReader().getSettings().getValueById('imgur_show_title');
+            const trigger = context.getArguments().join(' ').trim();
+
             builder.addAttachment({
                 title: {
-                    value: image.title,
+                    value: ((showTitle) ? image.title : ''),
                 },
-                imageUrl: image.originalUrl,
+                author: {
+                    icon: 'https://raw.githubusercontent.com/wreiske/Rocket.Chat.App-Imgur/master/images/Imgur-256.png',
+                    name: `/imgur ${trigger.trim()}`,
+                    link: `https://imgur.com/search?q=${trigger.trim()}`,
+                },
+                imageUrl: image.originalUrl
             });
 
             await modify.getCreator().finish(builder);
